@@ -1,0 +1,40 @@
+.Header {
+  width: 100%;
+  background-color: #000000;
+}
+
+.logo.container {
+  margin: auto;
+}
+
+.logo.container img {
+  height: 2.5rem;
+  max-width: 100%;
+}
+
+.menu {
+  height: 2.5rem;
+  background-color: rgb(245, 102, 0);
+}
+
+/* For Mobile View */
+@media screen and (min-width: 375px) {
+  .logo.container {
+      padding: 1.5rem;
+      display: flex;
+      justify-content: center;
+    }
+}
+
+/* For Desktop View */
+@media screen and (min-width: 1024px) {
+  .logo.container {
+    width: 1024px;
+    justify-content: left;
+  }
+
+  .logo.container img {
+    position: relative;
+    right: 16px;
+  }
+}

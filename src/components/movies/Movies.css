@@ -1,0 +1,68 @@
+.Movies {
+  background-color: #000000;
+}
+
+.moviesContainer.container-fluid {
+  max-width: 100%;
+  margin: 0.75rem 0;
+  background-color: #000000;
+  display: inline-grid;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.card p {
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
+
+.card {
+  background-color: #000000;
+  color: white;
+  margin: 0.75rem 0;
+  display: inline-block;
+}
+
+.loadMore {
+  padding-bottom: 1.25rem;
+}
+
+button {
+  background-color: rgb(245, 102, 0);
+  border-color: rgb(245, 102, 0);
+  border-radius: 12px;
+  margin: auto;
+  width: 10rem;
+  height: 40px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:hover,
+button:active,
+button:focus {
+  background-color: rgb(245, 102, 0);
+  border-color: rgb(245, 102, 0);
+}
+
+
+@media screen and (min-width: 375px) {
+  .moviesContainer.container-fluid {
+    grid-template-columns: repeat(auto-fill, 300px);
+    grid-auto-flow: row dense;
+    justify-items: center;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+    .moviesContainer.container-fluid {
+      padding-top: 1.5rem;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.2rem;
+    }
+  }

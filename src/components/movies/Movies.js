@@ -36,7 +36,9 @@ class Movies extends React.Component {
                 />
               );
             }
-          })}
+            return null
+          }
+          )}
         </Container>
         <div className="loadMore">
           <button onClick={this.handleLoadMoreClick}>Load More</button>

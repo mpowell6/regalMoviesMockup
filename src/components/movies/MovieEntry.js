@@ -1,5 +1,6 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import MovieDescriptions from "./MovieDescriptions";
 import "./Movies.css";
 
 class MovieEntry extends React.Component {
@@ -14,7 +15,7 @@ class MovieEntry extends React.Component {
               e.target.src = "/resources/images/film.placeholder.poster.jpg";
             }}
           />
-        <p>{this.props.movie.Title}</p>
+        <MovieDescriptions movie={this.props.movie} poster={this.props.poster} />
       </Card>
     );
   }

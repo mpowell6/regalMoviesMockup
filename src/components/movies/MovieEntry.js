@@ -6,7 +6,7 @@ import "./Movies.css";
 class MovieEntry extends React.Component {
   render() {
     return (
-      <Card className={this.props.entryKey}>
+      <Card className={this.props.movie.Title}>
           <img
             src={this.props.poster.Url}
             alt={this.props.poster.Description}

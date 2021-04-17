@@ -38,7 +38,7 @@ class Movies extends React.Component {
             if (key < this.state.numMovies) {
               return (
                 <MovieEntry
-                  entryKey={key}
+                  key={key}
                   movie={entry.Movie}
                   poster={entry.Movie.Media.find(
                     (poster) => poster.SubType === "TV_SmallPosterImage"

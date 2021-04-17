@@ -10,7 +10,6 @@ class MovieDescriptions extends React.Component {
     };
     this.showModal = this.showModal.bind(this);
     this.hideModal = this.hideModal.bind(this);
-    this.onHide = this.onHide.bind(this);
   }
 
   showModal() {
@@ -25,13 +24,12 @@ class MovieDescriptions extends React.Component {
     });
   }
 
-  onHide() {
-    this.setState({
-      show: false,
-    });
-  }
-
   render() {
+    const actors = this.props.movie.Actors;
+    let actorList = actors.map((actor, index) => {
+      return <li key={index}>{actor}</li>;
+    });
+
     return (
       <div>
         <p className="movieLink" onClick={this.showModal}>
@@ -57,6 +55,8 @@ class MovieDescriptions extends React.Component {
             />
             <h4>Description:</h4>
             <p>{this.props.movie.LongDescription}</p>
+            <h4>Actors:</h4>
+            <ul>{actorList}</ul>
             <h4>Rating:</h4>
             <p>{this.props.movie.Rating}</p>
             <h4>Genre:</h4>

@@ -38,8 +38,19 @@
   color: white;
 }
 
+.modal-body ul {
+  list-style: none;
+  columns: 100px 2;
+  -webkit-columns: 2;
+  -moz-columns: 2;
+}
+
 .loadMore {
   padding-bottom: 1.25rem;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  color: white;
 }
 
 button {

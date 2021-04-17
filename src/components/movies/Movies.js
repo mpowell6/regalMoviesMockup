@@ -10,6 +10,7 @@ class Movies extends React.Component {
     super(props);
     this.state = {
       numMovies: 10,
+      hidden: false
     };
     this.handleLoadMoreClick = this.handleLoadMoreClick.bind(this);
   }
@@ -17,10 +18,19 @@ class Movies extends React.Component {
   handleLoadMoreClick() {
     this.setState({
       numMovies: movieList.MovieFeedEntries.length,
+      hidden: true
     });
   }
 
   render() {
+    const showButton = this.state.hidden;
+    let button;
+    if (!showButton){
+      button = <button onClick={this.handleLoadMoreClick}>Load More</button>
+    } else {
+      button = <strong>Check back later for new titles!</strong>
+    }
+
     return (
       <div className="Movies">
         <Container className="moviesContainer" fluid>
@@ -28,7 +38,7 @@ class Movies extends React.Component {
             if (key < this.state.numMovies) {
               return (
                 <MovieEntry
-                  entryKey={key}
+                  key={key}
                   movie={entry.Movie}
                   poster={entry.Movie.Media.find(
                     (poster) => poster.SubType === "TV_SmallPosterImage"
@@ -41,7 +51,7 @@ class Movies extends React.Component {
           )}
         </Container>
         <div className="loadMore">
-          <button onClick={this.handleLoadMoreClick}>Load More</button>
+          {button}
         </div>
       </div>
     );
